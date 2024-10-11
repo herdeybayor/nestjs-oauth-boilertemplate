@@ -58,16 +58,6 @@ const GLOBAL_CONSTANTS = {
         SUPER_ADMIN: ["super-admin"],
     },
 
-    MAILER: {
-        SMTP_HOST: process.env.MAILER_SMTP_HOST,
-        SMTP_PORT: process.env.MAILER_SMTP_PORT,
-        SMTP_USER: process.env.MAILER_SMTP_USER,
-        SMTP_PASSWORD: process.env.MAILER_SMTP_PASSWORD,
-        SECURE: process.env.MAILER_SECURE === "true" ? true : false,
-        USE_AWS_SES: process.env.MAILER_USE_AWS_SES === "true" ? true : false,
-        FROM_EMAIL: "nestjs-boilertemplate <no-reply@nestjs-boilertemplate.com>",
-    },
-
     AWS: {
         S3_BUCKET: "nestjs-boilertemplate",
 
@@ -102,6 +92,17 @@ const CONFIG_BUILDER = {
             PASSWORD: "password",
             USERNAME: "postgres",
             DATABASE: "nestjs-boilertemplate",
+        },
+
+        // Mailer Configs
+        MAILER: {
+            SMTP_HOST: "localhost",
+            SMTP_PORT: 2525,
+            SMTP_USER: "user",
+            SMTP_PASSWORD: "password",
+            SECURE: false,
+            USE_AWS_SES: false,
+            FROM_EMAIL: "nestjs-boilertemplate <no-reply@nestjs-boilertemplate.com>",
         },
 
         // App Level Configs
@@ -150,6 +151,17 @@ const CONFIG_BUILDER = {
             SCHEMA: process.env.POSTGRES_SCHEMA!,
             PASSWORD: process.env.POSTGRES_PASSWORD!,
             PORT: process.env.POSTGRES_PORT ? parseInt(process.env.POSTGRES_PORT, 10) : 0,
+        },
+
+        // Mailer Configs
+        MAILER: {
+            SMTP_HOST: process.env.MAILER_SMTP_HOST,
+            SMTP_PORT: process.env.MAILER_SMTP_PORT,
+            SMTP_USER: process.env.MAILER_SMTP_USER,
+            SMTP_PASSWORD: process.env.MAILER_SMTP_PASSWORD,
+            SECURE: process.env.MAILER_SECURE === "true" ? true : false,
+            USE_AWS_SES: process.env.MAILER_USE_AWS_SES === "true" ? true : false,
+            FROM_EMAIL: "nestjs-boilertemplate <no-reply@nestjs-boilertemplate.com>",
         },
 
         // App Level Configs
